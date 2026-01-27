@@ -32,3 +32,18 @@ input, textarea
     padding: 0 30px
     position: relative
     z-index: 5
+
+.sticky
+    padding: 20px 0
+    position: sticky
+    z-index: 100
+    bottom: 0
+    font-weight: 500
+    font-size: 12px
+    text-transform: uppercase
+    mix-blend-mode: difference
+    color: var(--color-white)
+    .container
+        @include flexbox
+        align-items: center
+        justify-content: space-between
