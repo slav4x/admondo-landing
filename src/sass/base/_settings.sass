@@ -47,3 +47,48 @@ input, textarea
         @include flexbox
         align-items: center
         justify-content: space-between
+
+.heading
+    padding-top: 120px
+    &-title
+        font-size: 72px
+        font-weight: 500
+        line-height: 1.1
+    &-description
+        margin-top: 44px
+        margin-left: calc(100% / 4)
+        width: calc(100% / 4)
+        line-height: 1.6
+    &-bottom
+        margin-top: 120px
+        padding-bottom: 40px
+        border-top: 1px solid rgba(0,0,0,0.1)
+        @include flexbox
+        align-items: flex-start
+        span
+            padding: 24px 0
+            display: block
+            font-size: 12px
+            font-weight: 500
+            text-transform: uppercase
+
+.btn
+    height: 74px
+    @include flexbox
+    align-items: flex-end
+    justify-content: space-between
+    padding: 12px
+    padding-right: 24px
+    background: var(--color-accent)
+    color: var(--color-white)
+    span
+        flex: 1
+        gap: 10px
+        line-height: 1.6
+    &::after
+        content: '→'
+        line-height: 1.6
+        display: block
+    &-white
+        background: var(--color-white)
+        color: var(--color-black)
