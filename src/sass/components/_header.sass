@@ -1,1 +1,35 @@
-
+.header
+	position: absolute
+	top: 20px
+	left: 0
+	right: 0
+	z-index: 10
+	color: var(--color-white)
+	.container
+		@include flexbox
+		align-items: flex-start
+		justify-content: space-between
+	&-logo
+		display: block
+	&-nav
+		@include flexbox
+		align-items: flex-start
+		gap: 56px
+		font-size: 13px
+		font-weight: 500
+		text-transform: uppercase
+	&-lang
+		font-size: 13px
+		font-weight: 500
+		text-transform: uppercase
+		@include flexbox
+		flex-direction: column
+		align-items: flex-start
+		gap: 6px
+		&__favorites
+			@include flexbox
+			flex-direction: column
+			align-items: flex-start
+			gap: 6px
+		&__more
+			opacity: 0.4
