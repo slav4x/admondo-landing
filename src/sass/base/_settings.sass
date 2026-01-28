@@ -54,6 +54,9 @@ input, textarea
         padding-bottom: 72px
     &-flex
         @include flexbox
+    &-label
+        line-height: 1.6
+        margin-bottom: 24px
     &-title
         font-size: 72px
         font-weight: 500
@@ -69,12 +72,14 @@ input, textarea
         border-top: 1px solid rgba(0,0,0,0.1)
         @include flexbox
         align-items: flex-start
+        gap: 8px
         span
             padding: 24px 0
             display: block
             font-size: 12px
             font-weight: 500
             text-transform: uppercase
+            flex: 1
 
 .btn
     height: 74px
