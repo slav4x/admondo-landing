@@ -1,0 +1,30 @@
+.start
+	.heading-title
+		max-width: 900px
+	&-grid
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		gap: 8px
+	&-item
+		padding: 80px
+		height: 920px
+		background: var(--color-accent)
+		color: var(--color-white)
+		@include flexbox
+		flex-direction: column
+		align-items: flex-start
+		&-black
+			background: var(--color-black)
+		&__title
+			font-size: 44px
+			font-weight: 500
+			line-height: 1.1
+			margin-bottom: 30px
+			margin-top: auto
+		&__text
+			max-width: 670px
+			font-size: 20px
+			line-height: 1.6
+			margin-bottom: 44px
+		.btn
+			width: 320px
