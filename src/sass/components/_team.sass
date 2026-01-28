@@ -1,0 +1,34 @@
+.team
+	&-heading-col
+		width: calc(100% / 4)
+		margin-right: calc(100% / 4)
+		margin-left: auto
+		.heading-description
+			margin: 0
+			width: 100%
+		.btn
+			width: 100%
+			margin-top: 64px
+	&-grid
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		gap: 30px 8px
+	&-item
+		&__photo
+			width: 100%
+			height: 590px
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				object-position: center
+		&__info
+			margin-top: 24px
+			p
+				font-size: 12px
+				line-height: 1.1
+				letter-spacing: 0.02em
+			b
+				margin-top: 12px
+				font-weight: 500
+				font-size: 24px
