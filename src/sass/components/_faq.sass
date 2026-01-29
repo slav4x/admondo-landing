@@ -1,0 +1,58 @@
+.faq
+	background: var(--color-accent)
+	color: var(--color-white)
+	padding-bottom: 72px
+	counter-reset: faqItme
+	&-item
+		padding: 40px 0
+		border-bottom: 1px solid rgba(255,255,255,.06)
+		cursor: pointer
+		counter-increment: faqItem
+		&__head
+			opacity: 0.5
+			@include flexbox
+			align-items: flex-start
+			transition: var(--transition-ms)
+			&::before
+				content: '[00 ' counter(faqItem, decimal-leading-zero) ']'
+				display: block
+				width: calc(100% / 4)
+				font-size: 12px
+				line-height: 1.1
+				letter-spacing: 0.02em
+			&::after
+				content: ''
+				display: block
+				width: 32px
+				height: 32px
+				background: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='31.5' width='31' height='31' rx='15.5' transform='rotate(-90 0.5 31.5)' stroke='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.2379 16.9515L16.3236 19.8659C16.1448 20.0447 15.8548 20.0447 15.676 19.8659L12.7616 16.9515C12.5828 16.7727 12.5828 16.4827 12.7616 16.3039C12.9405 16.1251 13.2304 16.1251 13.4093 16.3039L15.5418 18.4365L15.5418 13L16.4577 13L16.4577 18.4365L18.5903 16.3039C18.7691 16.1251 19.0591 16.1251 19.2379 16.3039C19.4168 16.4827 19.4168 16.7727 19.2379 16.9515Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat center
+				transition: var(--transition-ms)
+				margin-left: auto
+		&__title
+			font-size: 24px
+			font-weight: 500
+			line-height: 1.1
+			max-width: 780px
+		&__wrapper
+			height: 0
+			overflow: hidden
+			transition: var(--transition-ms)
+		&__content
+			opacity: 0.5
+			max-width: 780px
+			margin-left: calc(100% / 4)
+			font-weight: 500
+			line-height: 1.5
+			padding-top: 16px
+			transition: var(--transition-ms)
+		&.show
+			.faq-item__head
+				opacity: 1
+				&::after
+					transform: rotate(-180deg)
+			.faq-item__content
+				opacity: 1
+
+		&:hover
+			.faq-item__head
+				opacity: 1
