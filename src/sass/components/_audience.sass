@@ -1,0 +1,36 @@
+.audience
+
+	&-item
+		background: var(--color-white)
+		@include flexbox
+		gap: 10px
+		// margin-bottom: 10px
+		position: sticky
+		top: 0
+		&:last-child
+			// margin-bottom: 0
+			padding-bottom: 120px
+			border-bottom: 1px solid rgba(0,0,0,.1)
+		&__content
+			width: calc(100% / 2 - 5px)
+			padding: 60px 0
+			@include flexbox
+			flex-direction: column
+			align-items: flex-start
+		&__text
+			max-width: 380px
+			line-height: 1.6
+		&__title
+			font-weight: 500
+			font-size: 76px
+			line-height: 1.1
+			letter-spacing: -0.02em
+			margin-top: auto
+		&__image
+			width: calc(100% / 2 - 5px)
+			height: 100svh
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				object-position: center
