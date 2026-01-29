@@ -108,3 +108,34 @@ input, textarea
         &:hover
             background: var(--color-black)
             color: var(--color-white)
+
+.marquee
+    background: #122529
+    height: 42px
+    color: var(--color-white)
+    text-transform: uppercase
+    font-size: 16px
+    font-weight: 500
+    line-height: 1.1
+    position: relative
+    overflow: hidden
+    &-track
+        position: absolute
+        display: flex
+        width: max-content
+        white-space: nowrap
+        will-change: transform
+        animation: marquee var(--duration, 20s) linear infinite
+        height: 100%
+    &-content
+        @include flexbox
+        align-items: center
+        gap: 80px
+        height: 100%
+        padding-right: 80px
+
+@keyframes marquee
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(calc(-1 * var(--distance)))
