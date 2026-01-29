@@ -1,4 +1,5 @@
 .benefits
+	counter-reset: benefitsItem
 	.heading-title
 		max-width: 760px
 	&-item
@@ -7,13 +8,14 @@
 		padding: 24px 0
 		position: sticky
 		top: 0
+		counter-increment: benefitsItem
 		&:last-child
 			border-bottom: 1px solid rgba(0,0,0,.1)
 		.container
 			@include flexbox
 			justify-content: space-between
 			&::before
-				content: 'S/002'
+				content: 'S/0' counter(benefitsItem, decimal-leading-zero)
 				display: block
 				width: calc(100% / 4)
 				font-size: 14px
