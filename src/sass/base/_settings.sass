@@ -90,6 +90,7 @@ input, textarea
     padding-right: 24px
     background: var(--color-accent)
     color: var(--color-white)
+    transition: var(--transition-ms)
     span
         flex: 1
         gap: 10px
@@ -98,6 +99,12 @@ input, textarea
         content: '→'
         line-height: 1.6
         display: block
+    &:hover
+        padding-left: 24px
+        background: #0A39C2
     &-white
         background: var(--color-white)
         color: var(--color-black)
+        &:hover
+            background: var(--color-black)
+            color: var(--color-white)
