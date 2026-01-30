@@ -1,0 +1,101 @@
+@media (max-width: 920px)
+	.heading
+		&-description
+			width: 75%
+
+	.platform
+		.heading-title
+			br
+				display: none
+
+	.audience
+		&-item
+			border-top: 1px solid rgba(0,0,0,.1)
+			padding: 24px 0
+			gap: 0
+			&:last-child
+				padding-bottom: 24px
+			&__content
+				width: 100%
+				padding: 0 0 44px
+			&__text
+				display: none
+			&__image
+				width: 100%
+				height: 440px
+
+	.benefits
+		&-item
+			padding: 24px 0
+			&__content
+				padding: 0 0 44px
+			&__image
+				width: 100%
+				height: 280px
+				img
+					transform: none
+			&__tags
+				margin-top: 12px
+			&__text
+				margin-top: 24px
+
+	.supported
+		.heading
+			.btn
+				margin-top: 44px
+		&-grid
+			grid-template-columns: repeat(2, 1fr)
+		&-item
+			height: 200px
+			&__description
+				display: none
+			&__logo
+				height: 36px
+
+	.configuration
+		.heading-title
+			br
+				display: none
+
+	.team
+		&-heading-col
+			width: 100%
+			margin-top: 44px
+			.btn
+				width: calc(100% / 2 - 4px)
+		&-grid
+			grid-template-columns: repeat(2, 1fr)
+
+	.statistic
+		&-grid
+			grid-template-columns: repeat(1, 1fr)
+
+	.faq
+		&-item
+			&__head
+				&::before
+					display: none
+			&__title
+				max-width: calc(100% - 56px)
+			&__content
+				max-width: calc(100% - 56px)
+				margin-left: 0
+
+	.footer
+		&-main
+			height: auto
+		&-logo
+			display: none
+		&-contacts
+			width: 100%
+			flex-direction: row
+			&__item
+				height: 185px
+				width: 50%
+		&-start
+			width: 100%
+			height: 185px
+			margin-top: 185px
+
+	.sticky
+		display: none

@@ -1,0 +1,158 @@
+@media (max-width: 1600px)
+	body
+		font-size: 16px
+
+	.heading
+		padding-top: 100px
+		&-only-title
+			padding-bottom: 60px
+		&-title
+			font-size: 56px
+		&-bottom
+			margin-top: 100px
+			padding-bottom: 30px
+			span
+				font-size: 10px
+
+	.btn
+		height: 64px
+
+	.hero
+		padding-bottom: 40px
+		&-description
+			max-width: 280px
+		&-title
+			font-size: 102px
+			max-width: 800px
+
+	.platform
+		.heading-title
+			max-width: 960px
+		&-item
+			padding: 24px
+			height: 495px
+			&__title
+				font-size: 24px
+				line-height: 29px
+				min-height: 58px
+			&__text
+				margin-top: 24px
+			&__support
+				gap: 0 24px
+				p
+					margin-bottom: 16px
+					font-size: 10px
+				img
+					height: 32px
+
+	.audience
+		&-item
+			&:last-child
+				padding-bottom: 100px
+			&__text
+				max-width: 370px
+			&__title
+				font-size: 56px
+
+	.benefits
+		.heading-title
+			max-width: 800px
+		&-item
+			.container
+				&::before
+					width: 330px
+			&__content
+				width: 470px
+			&__title
+				font-size: 26px
+			&__text
+				font-size: 16px
+				max-width: 240px
+			&__image
+				width: 380px
+				height: 430px
+				svg
+					transform: scale(0.9)
+
+	.supported
+		&-item
+			height: 340px
+			padding: 24px
+			&__logo
+				height: 48px
+
+	.configuration
+		.heading-title
+			max-width: 1040px
+
+	.innovation
+		&-content
+			padding-bottom: 60px
+		&-label
+			font-size: 16px
+		&-title
+			font-size: 32px
+			max-width: 620px
+
+	.team
+		&-heading-col
+			.btn
+				margin-top: 44px
+		&-grid
+			gap: 24px 8px
+		&-item
+			&__photo
+				height: 360px
+
+	.statistic
+		&-grid
+			gap: 32px 8px
+		&-item
+			&__number
+				font-size: 110px
+				padding-bottom: 32px
+
+	.news
+		padding-bottom: 100px
+
+	.faq
+		padding-bottom: 60px
+		&-item
+			padding: 40px 0
+			border-bottom: 1px solid rgba(255,255,255,.06)
+			cursor: pointer
+			counter-increment: faqItem
+			&__head
+				&::after
+					width: 24px
+					height: 24px
+					background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='-0.5' y='-0.5' width='23' height='23' rx='11.5' transform='matrix(1.19249e-08 -1 -1 -1.19249e-08 23 23)' stroke='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.76108 12.9515L11.6754 15.8659C11.8543 16.0447 12.1442 16.0447 12.323 15.8659L15.2374 12.9515C15.4162 12.7727 15.4162 12.4827 15.2374 12.3039C15.0585 12.1251 14.7686 12.1251 14.5898 12.3039L12.4572 14.4365L12.4572 9L11.5413 9L11.5413 14.4365L9.40871 12.3039C9.22987 12.1251 8.93992 12.1251 8.76108 12.3039C8.58224 12.4827 8.58224 12.7727 8.76108 12.9515Z' fill='white'/%3E%3C/svg%3E%0A")
+			&__title
+				font-size: 20px
+				max-width: 650px
+			&__content
+				max-width: 650px
+
+	.start
+		.heading-title
+			max-width: 860px
+		&-item
+			padding: 64px
+			height: 720px
+			&__title
+				font-size: 32px
+			&__text
+				max-width: 560px
+				font-size: 16px
+
+	.footer
+		&-nav
+			font-size: 44px
+		&-contacts
+			@include flexbox
+			align-items: flex-end
+			width: calc((100% / 3) * 2)
+			&__item
+				width: calc(100% / 2)
+		&-start
+			width: calc(100% / 3)

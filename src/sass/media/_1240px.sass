@@ -1,0 +1,93 @@
+@media (max-width: 1240px)
+	.heading
+		&-description
+			margin-left: 0
+			width: calc(100% / 2 - 4px)
+
+	.header
+		&-nav
+			display: none
+
+	.platform
+		&-col
+			width: 100%
+			&-sticky
+				order: 2
+		&-item
+			&-accent
+				height: 320px
+
+	.benefits
+		&-item
+			.container
+				&::before
+					display: none
+
+	.supported
+		.heading
+			.btn
+				width: calc(100% / 2 - 4px)
+		&-skip
+			display: none
+		&-grid
+			grid-template-columns: repeat(3, 1fr)
+
+	.configuration
+		&-full
+			&__wrapper
+				width: 80%
+
+	.team
+		&-heading-col
+			width: calc(100% / 2 - 4px)
+			margin-right: 0
+		&-skip
+			display: none
+		&-grid
+			grid-template-columns: repeat(3, 1fr)
+
+	.statistic
+		.heading
+			&-flex
+				flex-direction: column
+			&-description
+				margin-top: 44px
+				margin-right: 0
+				margin-left: 0
+		&-item
+			&__number
+				font-size: 96px
+
+	.faq
+		&-item
+			padding: 30px 0
+			&__title
+				max-width: calc(75% - 56px)
+			&__content
+				max-width: calc(75% - 56px)
+
+	.start
+		.heading-title
+			max-width: 720px
+		&-grid
+			grid-template-columns: repeat(1, 1fr)
+		&-item
+			width: 100%
+			height: auto
+			flex-direction: row
+			gap: 64px
+			&__content
+				flex: 1
+			&__text
+				max-width: 100%
+
+	.footer
+		&-logo
+			img
+				width: 418px
+		&-contacts
+			flex-direction: column
+			align-items: flex-start
+			&__item
+				height: 195px
+				justify-content: flex-end
