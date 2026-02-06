@@ -39,4 +39,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initMarquee();
   window.addEventListener('resize', initMarquee);
+
+  const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
+
+  const openPopup = (popupId) => {
+    const popup = document.querySelector(`[data-popup="${popupId}"]`);
+
+    if (!popup) {
+      console.error(`Error: popup "${popupId}" not defined`);
+      return;
+    }
+
+    const scrollbarWidth = getScrollbarWidth();
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+    popup.classList.add('open');
+  };
+
+  const closePopup = () => {
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    document.querySelectorAll('[data-popup]').forEach((popup) => popup.classList.remove('open'));
+  };
+
+  document.body.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-button]');
+    if (button) openPopup(button.getAttribute('data-button'));
+  });
+
+  document.querySelectorAll('.popup-close, .popup-backdrop').forEach((closeTrigger) => {
+    closeTrigger.addEventListener('click', closePopup);
+  });
+
+  window.addEventListener('resize', function () {
+    document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+  });
+  document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
 });

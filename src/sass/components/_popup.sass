@@ -1,0 +1,153 @@
+.popup
+	position: fixed
+	z-index: 9999
+	top: 0
+	left: 0
+	right: 0
+	height: var(--app-height)
+	pointer-events: none
+	&-backdrop
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: #000
+		opacity: 0
+		transition: var(--transition-ms) ease
+	&-content
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		overscroll-behavior-y: contain
+		overflow-y: auto
+		z-index: 100
+		padding: 20px
+		background: #fbfaf9
+		width: 620px
+		margin-left: auto
+		transform: translateX(100%)
+		transition: var(--transition-ms) ease
+		@include flexbox
+	&.open
+		pointer-events: auto
+		.popup-backdrop
+			opacity: .4
+		.popup-content
+			transform: translateX(0%)
+	&-main
+		width: 100%
+		@include flexbox
+		flex-direction: column
+		align-items: flex-start
+		position: relative
+		gap: 24px
+	&-footer
+		text-align: center
+		font-size: 12px
+		font-weight: 500
+		line-height: 1.5
+		width: 100%
+		margin-top: auto
+		text-transform: uppercase
+	&-head
+		@include flexbox
+		flex-direction: column
+		align-items: flex-start
+		gap: 8px
+		padding-right: 40px
+	&-title
+		font-size: 44px
+		font-weight: 500
+		line-height: 1.1
+	&-description
+		font-size: 16px
+		line-height: 1.6
+		font-weight: 400
+	&-close
+		position: absolute
+		top: 0
+		right: 0
+		width: 32px
+		height: 32px
+		border-radius: 6px
+		background: #F2F3F5 url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.22724 5.21918C4.67727 5.76915 4.75583 5.84772 4.75583 5.84772L8.89292 9.98481L4.75578 14.122C4.75578 14.122 4.74595 14.2693 5.22718 14.7505C5.70841 15.2317 5.85572 15.2219 5.85572 15.2219L9.99287 11.0848L14.13 15.2219C14.13 15.2219 14.2086 15.3005 14.7585 14.7505C15.3085 14.2005 15.2299 14.1219 15.2299 14.1219L11.0928 9.98481L15.2299 5.84773C15.2299 5.84773 15.2397 5.70042 14.7585 5.21918C14.2773 4.73795 14.1299 4.74779 14.1299 4.74779L9.99287 8.88487L5.85578 4.74778C5.85578 4.74778 5.77721 4.66921 5.22724 5.21918Z' fill='%234F5D74'/%3E%3C/svg%3E%0A") no-repeat center
+		cursor: pointer
+		transition: var(--transition-ms)
+		&:hover
+			background-color: #EEEEEE
+	&-langs
+		width: 100%
+		li
+			a
+				@include flexbox
+				align-items: center
+				padding: 16px 0
+				border-bottom: 1px solid rgba(0,0,0,.1)
+				gap: 12px
+				transition: var(--transition-ms)
+				img
+					width: 28px
+				span
+					flex: 1
+					font-weight: 500
+					line-height: 1.6
+				&::after
+					content: ''
+					display: block
+					width: 24px
+					height: 24px
+					opacity: 0
+					transition: var(--transition-ms)
+					background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.4227 19.1939C11.0182 19.1939 11.4689 18.9681 11.7747 18.5003L19.1781 7.1611C19.4034 6.80624 19.5 6.49978 19.5 6.19331C19.5 5.38682 18.8884 4.80615 18.0515 4.80615C17.4882 4.80615 17.1502 5.01584 16.7961 5.54812L10.3745 15.726L7.0912 11.6129C6.76931 11.2258 6.43133 11.0484 5.9485 11.0484C5.11159 11.0484 4.5 11.6452 4.5 12.4678C4.5 12.8226 4.61266 13.1452 4.91845 13.5001L9.07082 18.5648C9.42489 19.0003 9.84335 19.1939 10.4067 19.1939H10.4227Z' fill='%230C47F2'/%3E%3C/svg%3E%0A") no-repeat center
+				&:hover
+					color: var(--color-accent)
+			&:last-child
+				a
+					border: 0
+		&-selected a::after
+			opacity: 1 !important
+	&-form
+		width: 100%
+		@include flexbox
+		flex-direction: column
+		gap: 12px
+		.btn
+			width: 100%
+			margin-top: 20px
+			span
+				text-align: left
+	&-label
+		display: block
+		width: 100%
+		position: relative
+		padding-top: 12px
+		input
+			width: 100%
+			height: 44px
+			border: 0
+			border-radius: 0
+			border-bottom: 1px solid rgba(0,0,0,.1)
+			padding: 0
+			font-size: 16px
+			line-height: 18px
+			transition: var(--transition-ms)
+			&:focus, &:active
+				border-color: var(--color-accent)
+				& + span
+					top: 0
+					font-size: 11px
+			&:not(:placeholder-shown) + span
+				top: 0
+				font-size: 11px
+			@include placeholder
+				color: rgba(0,0,0,0)
+		span
+			position: absolute
+			top: 20px
+			left: 0
+			font-size: 16px
+			line-height: 18px
+			opacity: 0.5
+			transition: var(--transition-ms)
