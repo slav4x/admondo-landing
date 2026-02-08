@@ -75,4 +75,45 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
   });
   document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+
+  const lenis = new Lenis({
+    duration: 2,
+    lerp: 0.2,
+    easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    smooth: true,
+    smoothTouch: false,
+  });
+
+  requestAnimationFrame(function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  });
+
+  const counters = document.querySelectorAll('[data-counter]');
+
+  counters.forEach((el) => {
+    const num = el.textContent.trim();
+    const numArr = [...String(num)];
+
+    const idle = numArr.map((c) => `<span class="char">${c}</span>`).join('');
+    el.innerHTML = `<span class="idle">${idle}</span><span class="hover">${idle}</span>`;
+  });
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-inview');
+          io.unobserve(entry.target);
+        }
+      }
+    },
+    {
+      root: null,
+      rootMargin: `0px 0px -160px 0px`,
+      threshold: 0,
+    },
+  );
+
+  counters.forEach((el) => io.observe(el));
 });
